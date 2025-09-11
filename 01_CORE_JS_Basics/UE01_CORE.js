@@ -102,7 +102,7 @@ function userStory7(str) {
         console.error("Input needs to be a String: " + typeof str);
         return "";
     }
-    return str.match(/\d{2}\.\d{2}\.\d{4}/) || [];
+    return str.match(/\d{2}\.\d{2}\.\d{4}/g) || [];
 }
 
 function userStories() {
