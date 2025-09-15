@@ -75,6 +75,7 @@ function test(fu, arg, exp) {
         return false;
     }
     let result = fu(arg);
+    if (typeof result !== typeof exp) return false;
     return result === exp;
 }
 
@@ -138,13 +139,13 @@ function userStories() {
     // console.log(rot13(undefined))
 
     // User Story 3
-    function startUS3(arr, bool) {
-        try {
-            return userStory3(arr, bool);
-        } catch (e) {
-            console.error(e);
-        }
-    }
+    // function startUS3(arr, bool) {
+    //     try {
+    //         return userStory3(arr, bool);
+    //     } catch (e) {
+    //         console.error(e);
+    //     }
+    // }
 
     // console.log(startUS3(['Banana', 'apple', 'Cherry']));
     // console.log(startUS3(['Banana', 'apple', 'Cherry'], false));
@@ -169,7 +170,6 @@ function userStories() {
     // console.log(test(userStory4, [1, 2, 3, 4, 5, 6, "h", null, undefined, [1, 2, 3, 4]], [2, 4]))
     // console.log(test(userStory4, userStory4, [2, 4, 6]))
     // console.log(test(userStory4, [2,3], userStory4))
-    // HELP!
     // console.log(test(userStory3, ['Banana', 'apple', 'Cherry'], ['apple', 'Banana', 'Cherry']))
     // console.log(test(rot13, "Hallo", "Unyyb"))
     // console.log(test(userStory3, (['Banana', 'apple', 'Cherry'], false), ['Cherry', 'Banana', 'apple']))
@@ -205,7 +205,7 @@ function userStories() {
     // console.log(generate('/')(1e-308, 1e308)); // 0
 
     // User Story 7
-    console.log(userStory7("We have meetings on 12.09.2025 and 05.10.2025, but not on 32.13.2025."));
+    //console.log(userStory7("We have meetings on 12.09.2025 and 05.10.2025, but not on 32.13.2025."));
 }
 
 userStories();
