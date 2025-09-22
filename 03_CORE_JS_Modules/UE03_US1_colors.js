@@ -1,7 +1,7 @@
 export function rgbToHex(r, g, b) {
     if (![r, g, b].every(v => Number.isInteger(v) && v >= 0 && v <= 255)) return -1;
     const toHex = (n) => {
-        const hex = n.toString(16);
+        const hex = n.toString(16); //int to hex
         return hex.length === 1 ? "0" + hex : hex;
     };
     return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
