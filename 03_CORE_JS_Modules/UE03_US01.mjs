@@ -1,4 +1,4 @@
-export function rgbToHex(r, g, b) {
+function rgbToHex(r, g, b) {
     if (![r, g, b].every(v => Number.isInteger(v) && v >= 0 && v <= 255)) return -1;
     const toHex = (n) => {
         const hex = n.toString(16); //int to hex
@@ -7,8 +7,9 @@ export function rgbToHex(r, g, b) {
     return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
 }
 
-export function rgbFunctionToHex(rgb) {
-    const values = rgb.replace(/rgb\(|\)/gi, '').split(',').map(v => v.trim()); //g...global, i...case insensitiv
+function rgbFunctionToHex(rgb) {
+    rgb = rgb.toString();
+    const values = rgb.replace(/rgb\(|\)/gi, '').split(',').map(v => v.trim()); //g...global, i...case insensitive
     const [r, g, b] = values.map(v => {
         if (v.includes('%')) return Math.round(parseFloat(v) * 2.55); else {
             return parseInt(v, 10);
@@ -18,7 +19,7 @@ export function rgbFunctionToHex(rgb) {
 
 }
 
-export function hexToRgb(hex, isPercentage) {
+function hexToRgb(hex, isPercentage) {
     hex = hex.replace('#', '');
     if (hex.length === 3) hex = hex.split('').map(c => c + c).join(''); // #0ca -> #00ccaa
     if (hex.length !== 6) return -1;
@@ -30,3 +31,5 @@ export function hexToRgb(hex, isPercentage) {
         return `rgb(${percent(r)}, ${percent(g)}, ${percent(b)})`;
     } else return `rgb(${r}, ${g}, ${b})`;
 }
+
+export {rgbToHex, rgbFunctionToHex, hexToRgb};

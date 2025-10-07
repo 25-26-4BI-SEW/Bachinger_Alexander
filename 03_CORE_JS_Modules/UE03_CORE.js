@@ -1,38 +1,46 @@
-// User Story 1
-import {rgbToHex, rgbFunctionToHex, hexToRgb} from "./UE03_US1_colors.js";
+import {rgbToHex, rgbFunctionToHex, hexToRgb} from "./UE03_US01.mjs";
+import convert, {accent_color, primary_color, secondary_color} from "./UE03_US02.mjs";
 
-// console.log(rgbToHex(12, 160, 52));
-// console.log(rgbFunctionToHex("rgb(187, 22%, 88)"));
-// console.log(rgbFunctionToHex("rgb(187, 22%, 88)"));
-// console.log(rgbFunctionToHex("rgb(-1, 99%, 100)"));
-// console.log(rgbFunctionToHex("rgb(1, 99%, 100)"));
-// console.log(hexToRgb("#0ca034"));
-// console.log(hexToRgb("0ca034"));
-// console.log(hexToRgb("#bb3858"));
-// console.log(hexToRgb("#01fc64"));
-// console.log(hexToRgb("#0ca034"));
-// console.log(hexToRgb("#0ca034", true));
-// console.log(hexToRgb("#fff", true));
-// console.log(hexToRgb("#0", true));
-// console.log(hexToRgb("#000", true));
-// console.log(hexToRgb("#000000", true));
-// console.log(hexToRgb("#000000", false));
+// Test Cases von Felix Radbauer
+// 1.1
+console.log("\nUser Story 1.1:\n");
+console.log(rgbToHex(12, 160, 52));
+console.log(rgbToHex(-1, 12, 200));
+console.log(rgbToHex(32, 200, 150));
 
-// User Story 2
+// 1.2
+console.log("\nUser Story 1.2:\n");
+console.log(rgbFunctionToHex("ff"));
+console.log(rgbFunctionToHex(12));
+console.log(rgbFunctionToHex("rgb(122,22,65%)"));
+console.log(rgbFunctionToHex("rgb(187,22%,88)"));
 
 
-// User Story 3
+// 1.3
+console.log("\nUser Story 1.3:\n");
+console.log(hexToRgb("#fa3", false));
+console.log(hexToRgb("#fa3", true));
 
 
-function CORE3_userStories() {
-    // User Story 1
+// 2
+console.log("\nUser Story 2:\n");
+console.log(convert("#C4A"));
+console.log(convert("#C4A", true));
+console.log(convert("#f11"));
+console.log(convert("rgb(12%,7%,0%)"));
+console.log(convert("rgb(50,50,50)"));
+console.log(convert("rgb(12,42,140)"));
+console.log(convert("rgb(50%,50%,50%)"));
+console.log(convert("Hello"));
+console.log(convert(123));
 
 
-    // User Story 2
-
-
-    // User Story 3
-
-}
-
-CORE3_userStories();
+// 3
+console.log("\nUser Story 3:\n")
+const colors = [primary_color, secondary_color, accent_color];
+console.log(colors);
+let convertedColors = [];
+colors.forEach(color => {
+    convertedColors.push(convert(color));
+});
+console.log(convertedColors)

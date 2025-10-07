@@ -63,31 +63,31 @@ const alex = {
 
 function CORE2_userStories() {
     // User Story 1
-    // console.log(x.y.z)
+    console.log(x.y.z)
 
     // User Story 2
-    // console.log(v.v().v);
+    console.log(v.v().v);
 
     // User Story 3
-    // console.log(v.property);
+    console.log(v.property);
 
     // User Story 4
-    // debugObject({a: 1, b: 2, c: 3});
+    debugObject({a: 1, b: 2, c: 3});
 
     // User Story 5
-    // console.log(equals({a: 1, b: 2, c: 3}, {a: 1, b: 2, c: 3}));
-    // console.log(equals({a: 1, c: 3}, {a: 1, b: 2, c: 3}));
-    // console.log(equals({a: 1, b: 2, c: 3}, {a: 1, d: 2, c: 3}));
-    // console.log(equals({a: 1, b: 2, c: 3}, {a: 2, b: 3}));
-    // console.log(equals([1, 2, 3], [1, 2, 3]));
+    console.log(equals({a: 1, b: 2, c: 3}, {a: 1, b: 2, c: 3}));
+    console.log(equals({a: 1, c: 3}, {a: 1, b: 2, c: 3}));
+    console.log(equals({a: 1, b: 2, c: 3}, {a: 1, d: 2, c: 3}));
+    console.log(equals({a: 1, b: 2, c: 3}, {a: 2, b: 3}));
+    console.log(equals([1, 2, 3], [1, 2, 3]));
 
     // User Story 6
-    // console.log(person);
-    // console.log(personExtended);
+    console.log(person);
+    console.log(personExtended);
 
     // User Story 7
-    // alex.traditional();
-    // alex.arrow();
+    alex.traditional();
+    alex.arrow();
 }
 
 CORE2_userStories();
