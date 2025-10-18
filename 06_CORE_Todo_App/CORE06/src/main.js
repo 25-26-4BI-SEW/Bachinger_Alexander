@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
 import './style.css'
-import App from './App.vue'
+import TodoApp from './TodoApp.vue'
 
-createApp(App).mount('#app')
+createApp(TodoApp).mount('#app')
