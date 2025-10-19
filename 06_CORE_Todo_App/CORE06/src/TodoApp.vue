@@ -24,10 +24,10 @@ function addTodo() {
   todos.value.push({
     timestamp: Date.now(),
     description: todoInput.value,
+    completed: false
   });
   todoInput.value = "";
 }
-
 </script>
 
 <template>
@@ -47,6 +47,7 @@ function addTodo() {
         v-for="item in todos"
         :timestamp="item.timestamp"
         :description="item.description"
+        v-model:completed="item.completed"
     />
     </tbody>
   </table>

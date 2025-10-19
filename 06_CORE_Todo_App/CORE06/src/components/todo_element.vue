@@ -1,32 +1,32 @@
 <script setup>
-defineProps({
+
+const props = defineProps({
   description: String,
   timestamp: Date,
   completed: Boolean,
-})
+});
+
+const emit = defineEmits(["update:completed"]);
 
 function getAge(timestamp) {
   const diff = new Date() - new Date(timestamp);
-
   const days = Math.floor(diff / (1000 * 60 * 60 * 24));
   const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
   const minutes = Math.floor((diff / (1000 * 60)) % 60);
-  // const seconds = Math.floor((diff / 1000) % 60);
-
-  // return days + 'd ' + hours + 'h ' + minutes + 'm ' + seconds + 's';
   return days + 'd ' + hours + 'h ' + minutes + 'm';
 }
 
+function toggleCompleted() {
+  emit("update:completed", !props.completed);
+}
 </script>
 
 <template>
   <tr>
     <td>{{ description }}</td>
     <td>{{ getAge(timestamp) }}</td>
-    <td>{{ completed ? "✅" : "❌" }}</td>
+    <td @click="toggleCompleted" style="cursor: pointer;">
+      {{ completed ? "✅" : "❌" }}
+    </td>
   </tr>
 </template>
-
-<style scoped>
-
-</style>
