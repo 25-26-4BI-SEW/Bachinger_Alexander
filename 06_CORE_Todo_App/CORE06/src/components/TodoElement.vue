@@ -15,7 +15,7 @@ export default {
     timestamp: Number,
     completed: Boolean,
   },
-  
+
   emits: ["update:completed"],
 
   computed: {
