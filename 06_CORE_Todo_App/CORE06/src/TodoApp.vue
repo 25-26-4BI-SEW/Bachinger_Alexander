@@ -1,9 +1,23 @@
 <script setup>
 import TodoElement from './components/todo_element.vue'
-import {ref} from "vue";
+import {onMounted, ref, watch} from "vue";
 
 const todos = ref([]);
 const todoInput = ref("");
+
+onMounted(() => {
+  const saved = localStorage.getItem("todos");
+  if (saved) {
+    try {
+      todos.value = JSON.parse(saved);
+    } catch (e) {
+      console.error("Error while loading from LocalStorage:", e);
+    }
+  }
+});
+watch(todos, (newVal) => {
+  localStorage.setItem("todos", JSON.stringify(newVal));
+}, {deep: true});
 
 function addTodo() {
   if (!todoInput.value) return;
@@ -17,19 +31,24 @@ function addTodo() {
 </script>
 
 <template>
-  <input type="text" v-model.trim="todoInput" placeholder="Enter ToDo">
+  <input type="text" v-model.trim="todoInput" placeholder="Enter Todo">
   <button type="button" @click="addTodo">Add</button>
-  <table id="todos">
+  <div class="noTodos" v-show="todos.length === 0">No Todos!</div>
+  <table id="todos" v-show="todos.length > 0">
+    <thead>
     <tr>
       <th>ToDo</th>
       <th>Created</th>
       <th>Completed</th>
     </tr>
+    </thead>
+    <tbody>
     <TodoElement
         v-for="item in todos"
         :timestamp="item.timestamp"
         :description="item.description"
     />
+    </tbody>
   </table>
 </template>
 

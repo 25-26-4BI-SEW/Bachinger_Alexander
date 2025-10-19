@@ -1,23 +1,29 @@
 <script setup>
-import {ref} from 'vue'
-
 defineProps({
   description: String,
   timestamp: Date,
   completed: Boolean,
 })
 
-function formatDate(timestamp) {
-  const d = new Date(timestamp)
-  return d.getHours() + ':' + d.getMinutes() + ', ' + String(d.getDate()).padStart(2, '0') + '.' + String(d.getMonth() + 1).padStart(2, '0') + '.' + d.getFullYear();
+function getAge(timestamp) {
+  const diff = new Date() - new Date(timestamp);
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+  // const seconds = Math.floor((diff / 1000) % 60);
+
+  // return days + 'd ' + hours + 'h ' + minutes + 'm ' + seconds + 's';
+  return days + 'd ' + hours + 'h ' + minutes + 'm';
 }
+
 </script>
 
 <template>
   <tr>
-    <th>{{ description }}</th>
-    <th>{{ formatDate(timestamp) }}</th>
-    <th>{{ completed }}</th>
+    <td>{{ description }}</td>
+    <td>{{ getAge(timestamp) }}</td>
+    <td>{{ completed ? "✅" : "❌" }}</td>
   </tr>
 </template>
 
