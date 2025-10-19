@@ -1,9 +1,9 @@
 <script setup>
-import TodoElement from './components/todo_element.vue'
+import TodoList from './components/TodoList.vue'
+import TodoInput from './components/TodoInput.vue'
 import {onMounted, ref, watch} from "vue";
 
 const todos = ref([]);
-const todoInput = ref("");
 
 onMounted(() => {
   const saved = localStorage.getItem("todos");
@@ -19,38 +19,18 @@ watch(todos, (newVal) => {
   localStorage.setItem("todos", JSON.stringify(newVal));
 }, {deep: true});
 
-function addTodo() {
-  if (!todoInput.value) return;
+function addTodo(description) {
   todos.value.push({
+    description,
     timestamp: Date.now(),
-    description: todoInput.value,
-    completed: false
+    completed: false,
   });
-  todoInput.value = "";
 }
 </script>
 
 <template>
-  <input type="text" v-model.trim="todoInput" placeholder="Enter Todo">
-  <button type="button" @click="addTodo">Add</button>
-  <div class="noTodos" v-show="todos.length === 0">No Todos!</div>
-  <table id="todos" v-show="todos.length > 0">
-    <thead>
-    <tr>
-      <th>ToDo</th>
-      <th>Created</th>
-      <th>Completed</th>
-    </tr>
-    </thead>
-    <tbody>
-    <TodoElement
-        v-for="item in todos"
-        :timestamp="item.timestamp"
-        :description="item.description"
-        v-model:completed="item.completed"
-    />
-    </tbody>
-  </table>
+  <TodoInput @add="addTodo"/>
+  <TodoList :todos="todos"/>
 </template>
 
 <style scoped>

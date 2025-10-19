@@ -25,8 +25,12 @@ function toggleCompleted() {
   <tr>
     <td>{{ description }}</td>
     <td>{{ getAge(timestamp) }}</td>
-    <td @click="toggleCompleted" style="cursor: pointer;">
-      {{ completed ? "✅" : "❌" }}
-    </td>
+    <td class="complete" @click="toggleCompleted">{{ completed ? "✅" : "❌" }}</td>
   </tr>
 </template>
+
+<style scoped>
+td.complete {
+  cursor: pointer;
+}
+</style>
