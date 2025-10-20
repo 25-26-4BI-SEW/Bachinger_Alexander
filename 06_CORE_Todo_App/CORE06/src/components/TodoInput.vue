@@ -1,7 +1,7 @@
 <script setup>
 import {ref} from "vue";
 
-const emit = defineEmits(["add-todo"]);
+const emit = defineEmits([]);
 const todoInput = ref("");
 
 function addTodo() {

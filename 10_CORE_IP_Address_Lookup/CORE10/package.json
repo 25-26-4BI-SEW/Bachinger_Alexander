@@ -1,5 +1,5 @@
 {
-  "name": "vue",
+  "name": "core10",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "axios": "^1.12.2",
     "vue": "^3.5.22"
   },
   "devDependencies": {
