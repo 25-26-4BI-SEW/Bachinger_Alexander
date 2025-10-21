@@ -1,14 +1,11 @@
 <script setup>
 import {ref, watch} from "vue";
 
-const emit = defineEmits([]);
+const emit = defineEmits(["input"]);
 const input = ref("");
 
 watch(input, (val) => {
-  if (val.toString().length > 3) {
-    console.log(val);
-    emit("input", val);
-  }
+  if (val.toString().length > 3) emit("input", val);
 });
 
 function clearInput() {
@@ -17,9 +14,8 @@ function clearInput() {
 </script>
 
 <template>
-  <input type="text" v-model.trim="input" placeholder="Enter URL">
+  <input type="text" v-model.trim="input" placeholder="Enter Domain">
   <button type="button" @click="clearInput">Clear</button>
-  <!--  <button type="button" @click="sendInput">Submit</button>-->
 </template>
 
 <style scoped>

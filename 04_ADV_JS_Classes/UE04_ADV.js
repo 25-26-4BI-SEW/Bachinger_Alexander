@@ -1,11 +1,19 @@
 // US01
 class Complex {
-    #real;
-    #imaginary;
+    #real = 0;
+    #imaginary = 0;
 
-    constructor(real = 0, imaginary = 0) {
-        if (!isNaN(Number(real))) this.#real = real; else console.error(real + " is not a number");
-        if (!isNaN(Number(imaginary))) this.#imaginary = imaginary; else console.error(imaginary + " is not a number");
+    constructor(a = 0, b = 0) {
+        if (b === 0 && a instanceof Complex) {
+            this.#real = a.real;
+            this.#imaginary = a.imaginary;
+        }
+        if (!isNaN(Number(a))) {
+            this.#real = a;
+        } else console.error(a + " is not a number");
+        if (!isNaN(Number(b))) {
+            this.#imaginary = b;
+        } else console.error(b + " is not a number");
     }
 
     get real() {
@@ -116,7 +124,7 @@ class Dog extends Animal {
     }
 
     info() {
-        return this.name + " is " + this.age + " years old and is a " + this.breed
+        return this.name + " is " + this.age + " years old and is a " + this.breed;
     }
 }
 

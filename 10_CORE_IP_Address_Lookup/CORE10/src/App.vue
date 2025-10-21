@@ -1,24 +1,20 @@
 <script setup>
 import DomainInput from "./components/DomainInput.vue";
 import DataDisplay from "./components/DataDisplay.vue";
-import {ref, watch} from "vue";
+import {ref} from "vue";
 
 const domain = ref("");
 
-// watch(domain, (newVal, oldVal) => {
-//   if (newVal === oldVal) return;
-//   domainInfo(newVal);
-// })
-//
-// function domainInfo(domainInput) {
-//   console.log(domainInput);
-// }
+function domainInfo(domainInput) {
+  domain.value = domainInput.value;
+  console.log(domainInput);
+}
 
 </script>
 
 <template>
-  <DomainInput @input="domain"/>
-  <DataDisplay :domain/>
+  <DomainInput @input="(domain) => domainInfo(domain)"/>
+  <DataDisplay :domain="domain"/>
 </template>
 
 <style scoped>
