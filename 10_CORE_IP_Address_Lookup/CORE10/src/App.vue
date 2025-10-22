@@ -6,14 +6,13 @@ import {ref} from "vue";
 const domain = ref("");
 
 function domainInfo(domainInput) {
-  domain.value = domainInput.value;
-  console.log(domainInput);
+  domain.value = domainInput;
 }
 
 </script>
 
 <template>
-  <DomainInput @input="(domain) => domainInfo(domain)"/>
+  <DomainInput @input="domainInfo"/>
   <DataDisplay :domain="domain"/>
 </template>
 

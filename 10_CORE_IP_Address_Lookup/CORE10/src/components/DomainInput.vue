@@ -1,20 +1,22 @@
 <script setup>
-import {ref, watch} from "vue";
+import {ref} from "vue";
 
-const emit = defineEmits(["input"]);
-const input = ref("");
+const emit = defineEmits(['input']);
+const input = ref('');
 
-watch(input, (val) => {
-  if (val.toString().length > 3) emit("input", val);
-});
+
+function emitChange() {
+  if (input.value.length > 3) emit('input', input.value);
+}
 
 function clearInput() {
   input.value = "";
+  emit('input', null);
 }
 </script>
 
 <template>
-  <input type="text" v-model.trim="input" placeholder="Enter Domain">
+  <input v-model.trim="input" @input="emitChange" type="text" placeholder="Enter Domain">
   <button type="button" @click="clearInput">Clear</button>
 </template>
 

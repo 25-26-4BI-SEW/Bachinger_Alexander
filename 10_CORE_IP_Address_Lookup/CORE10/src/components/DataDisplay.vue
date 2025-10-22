@@ -7,8 +7,6 @@ const props = defineProps({
 });
 
 const ips = ref([])
-const loading = ref(false);
-const error = ref(null);
 
 async function getIP(domain) {
   if (!domain) {
@@ -16,32 +14,23 @@ async function getIP(domain) {
     return;
   }
   try {
-    console.log("Domain:" + domain);
-    let api = 'http://www.dns-lg.com/us01/' + domain + '/a';
-    // let api = 'http://www.dns-lg.com/us01/orf.at/a';
-    let res = await axios.get(api);
-    const answer = res.data.answer;
-    // ips.value = answer.map(record => record.rdata);
+    let res = await axios.get('http://www.dns-lg.com/us01/' + domain + '/a');
     if (res.data.answer) {
       ips.value = res.data.answer.map(record => record.rdata);
     } else {
       ips.value = ["No A records found"];
     }
   } catch (e) {
-    error.value = e.message;
     ips.value = [];
-  } finally {
-    loading.value = false;
   }
 }
 
 watch(
     () => props.domain,
-    (newDomain) => {
-      getIP(newDomain);
-    },
-    {immediate: true}
-);
+    (newDomain, oldDomain) => {
+      if (newDomain !== oldDomain) getIP(newDomain);
+    }
+)
 
 </script>
 
