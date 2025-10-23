@@ -1,6 +1,6 @@
 <script setup>
 import DomainInput from "./components/DomainInput.vue";
-import DataDisplay from "./components/DataDisplay.vue";
+import DomainLookup from "./components/DomainLookup.vue";
 import {ref} from "vue";
 
 const domain = ref("");
@@ -13,7 +13,7 @@ function domainInfo(domainInput) {
 
 <template>
   <DomainInput @input="domainInfo"/>
-  <DataDisplay :domain="domain"/>
+  <DomainLookup :domain="domain"/>
 </template>
 
 <style scoped>
