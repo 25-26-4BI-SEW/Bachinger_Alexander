@@ -19,12 +19,7 @@ function clearInput() {
 
 <template>
   <div class="input-wrapper">
-    <input
-        v-model.trim="input"
-        placeholder="Enter domain (e.g. sub.domain.tld)"
-        type="text"
-        @input="emitChange"
-    />
+    <input v-model.trim="input" placeholder="Enter domain (e.g. sub.domain.tld)" type="text" @input="emitChange"/>
     <button type="button" @click="clearInput">Clear</button>
   </div>
 </template>
