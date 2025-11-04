@@ -101,10 +101,8 @@ async function fetchWeather(lat, lon) {
 <template>
   <div>
     <h2 v-if="props.domain">Lookup for {{ props.domain }}</h2>
-
     <div v-if="loading">Loading data...</div>
     <div v-else-if="error" class="error">{{ error }}</div>
-
     <table v-else-if="ip">
       <tr>
         <td>IP</td>
