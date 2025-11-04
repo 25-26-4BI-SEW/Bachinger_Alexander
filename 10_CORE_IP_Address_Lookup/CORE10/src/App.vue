@@ -1,21 +1,27 @@
 <script setup>
+import {ref} from "vue";
 import DomainInput from "./components/DomainInput.vue";
 import DomainLookup from "./components/DomainLookup.vue";
-import {ref} from "vue";
 
 const domain = ref("");
-
-function domainInfo(domainInput) {
-  domain.value = domainInput;
-}
-
 </script>
 
 <template>
-  <DomainInput @input="domainInfo"/>
-  <DomainLookup :domain="domain"/>
+  <main class="app">
+    <h1>IP Address & Location Lookup</h1>
+    <DomainInput @input="(val) => (domain = val)"/>
+    <DomainLookup :domain="domain"/>
+  </main>
 </template>
 
 <style scoped>
+.app {
+  font-family: system-ui, sans-serif;
+  padding: 2rem;
+  text-align: center;
+}
 
+h1 {
+  margin-bottom: 1rem;
+}
 </style>
