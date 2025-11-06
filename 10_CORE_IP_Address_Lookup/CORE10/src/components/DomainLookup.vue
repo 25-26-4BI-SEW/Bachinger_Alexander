@@ -82,8 +82,20 @@ async function fetchLocation(ipAddr) {
 async function fetchSun(lat, lon) {
   const res = await axios.get('https://api.sunrise-sunset.org/json?lat=' + lat + '&lng=' + lon + '&formatted=0');
   if (res.data.status !== "OK") throw new Error("Sunrise/sunset not found.");
-  sunrise.value = new Date(res.data.results.sunrise).toLocaleTimeString();
-  sunset.value = new Date(res.data.results.sunset).toLocaleTimeString();
+  sunrise.value = new Date(res.data.results.sunrise).toLocaleTimeString("en-US", {
+    timeZone: timezone.value,
+    hour12: false,
+    hour: "2-digit",
+    minute: "2-digit"
+  });
+
+  sunset.value = new Date(res.data.results.sunset).toLocaleTimeString("en-US", {
+    timeZone: timezone.value,
+    hour12: false,
+    hour: "2-digit",
+    minute: "2-digit"
+  });
+
 }
 
 async function fetchWeather(lat, lon) {
@@ -104,6 +116,7 @@ async function fetchWeather(lat, lon) {
     <div v-if="loading">Loading data...</div>
     <div v-else-if="error" class="error">{{ error }}</div>
     <table v-else-if="ip">
+      <tbody>
       <tr>
         <td>IP</td>
         <td>{{ ip }}</td>
@@ -140,12 +153,14 @@ async function fetchWeather(lat, lon) {
         <td>Sunset</td>
         <td>{{ sunset || 'No Data' }}</td>
       </tr>
+      </tbody>
     </table>
 
     <div v-if="ip" class="weather">
       <h3>Weather</h3>
       <p v-if="weather_time">At: {{ weather_time }}</p>
       <table>
+        <tbody>
         <tr>
           <td>Temperature</td>
           <td>{{ weather_temp || '-' }} °C</td>
@@ -158,6 +173,7 @@ async function fetchWeather(lat, lon) {
           <td>Wind Direction</td>
           <td>{{ weather_windD || '-' }}°</td>
         </tr>
+        </tbody>
       </table>
     </div>
   </div>
