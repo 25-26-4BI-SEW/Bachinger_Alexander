@@ -22,3 +22,16 @@ SEW | Linting and Debugging vue.js
 ## Skill(s)
 - [Debugging vue.js](https://my.skilldisplay.eu/en/skill/2995/0)
 - [Linting vue.js](https://my.skilldisplay.eu/en/skill/2997/0)  
+
+Settings:
+
+`File | Settings | Languages & Frameworks | JavaScript | Code Quality Tools | ESLint`
+
+
+Commands:
+```bash
+  npm run lint
+```
+```bash
+  npm run lint -- --fix
+```

@@ -2,28 +2,41 @@
 import TodoElement from './TodoElement.vue'
 
 defineProps({
-  todos: Array,
+    todos: {
+        type: Array,
+        default: () => [],
+    },
 })
+
 </script>
 
 <template>
-  <table v-if="todos.length" id="todos">
+  <table
+    v-if="todos.length"
+    id="todos"
+  >
     <thead>
-    <tr>
-      <th>ToDo</th>
-      <th>Created</th>
-      <th>Completed</th>
-    </tr>
+      <tr>
+        <th>ToDo</th>
+        <th>Created</th>
+        <th>Completed</th>
+      </tr>
     </thead>
     <tbody>
-    <TodoElement
+      <TodoElement
         v-for="item in todos"
-        :timestamp="item.timestamp"
-        :description="item.description"
+        :key="item.id"
         :completed="item.completed"
+        :description="item.description"
+        :timestamp="item.timestamp"
         @update:completed="(v) => item.completed = v"
-    />
+      />
     </tbody>
   </table>
-  <div v-else class="noTodos">No Todos!</div>
+  <div
+    v-else
+    class="noTodos"
+  >
+    No Todos!
+  </div>
 </template>

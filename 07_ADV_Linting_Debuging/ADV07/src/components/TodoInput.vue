@@ -1,7 +1,7 @@
 <script setup>
 import {ref} from "vue";
 
-const emit = defineEmits([]);
+const emit = defineEmits(["add"]);
 const todoInput = ref("");
 
 function addTodo() {
@@ -12,6 +12,15 @@ function addTodo() {
 </script>
 
 <template>
-  <input type="text" v-model.trim="todoInput" placeholder="Enter Todo">
-  <button type="button" @click="addTodo">Add</button>
+  <input
+    v-model.trim="todoInput"
+    type="text"
+    placeholder="Enter Todo"
+  >
+  <button
+    type="button"
+    @click="addTodo"
+  >
+    Add
+  </button>
 </template>
