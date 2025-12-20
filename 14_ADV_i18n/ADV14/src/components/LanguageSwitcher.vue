@@ -13,16 +13,16 @@ function setLanguage(lang) {
 <template>
   <div class="language">
     <a
-        :class="{ active: locale === 'en' }"
-        aria-label="Change Language to English"
-        href="#"
-        @click.prevent="setLanguage('en')"
+      :class="{ active: locale === 'en' }"
+      aria-label="Change Language to English"
+      href="#"
+      @click.prevent="setLanguage('en')"
     >EN</a>
     <a
-        :class="{ active: locale === 'de' }"
-        aria-label="Änder Sprache auf Deutsch"
-        href="#"
-        @click.prevent="setLanguage('de')"
+      :class="{ active: locale === 'de' }"
+      aria-label="Änder Sprache auf Deutsch"
+      href="#"
+      @click.prevent="setLanguage('de')"
     >DE</a>
   </div>
 </template>
