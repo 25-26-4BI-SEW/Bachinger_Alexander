@@ -1,3 +1,5 @@
 {
-  "test": "EN"
+  "whatLang": "EN",
+  "car": "car | cars",
+  "apple": "no apples | one apple | {count} apples"
 }

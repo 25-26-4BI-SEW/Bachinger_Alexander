@@ -3,21 +3,42 @@ import {useI18n} from "vue-i18n";
 
 const {t} = useI18n();
 
-defineProps<{
-    msg: string
-}>()
+defineProps({
+    msg: {
+        type: String,
+        default: "",
+    }
+});
 </script>
 
 <template>
-    <div class="greetings">
-        <h1 class="green">{{ msg }}</h1>
-        <h2>{{ t('test') }}</h2>
-        <h3>
-            You’ve successfully created a project with
-            <a href="https://vite.dev/" rel="noopener" target="_blank">Vite</a> +
-            <a href="https://vuejs.org/" rel="noopener" target="_blank">Vue 3</a>.
-        </h3>
-    </div>
+  <div class="greetings">
+    <h1 class="green">
+      {{ msg }}
+    </h1>
+    <h2>{{ t('whatLang') }}</h2>
+    <h3>
+      You’ve successfully created a project with
+      <a
+        href="https://vite.dev/"
+        rel="noopener"
+        target="_blank"
+      >Vite</a> +
+      <a
+        href="https://vuejs.org/"
+        rel="noopener"
+        target="_blank"
+      >Vue 3</a>.
+    </h3>
+  </div>
+  <div>
+    <p>{{ $t('car', 1) }}</p>
+    <p>{{ $t('car', 2) }}</p>
+
+    <p>{{ $t('apple', 0) }}</p>
+    <p>{{ $t('apple', 1) }}</p>
+    <p>{{ $t('apple', 10) }}</p>
+  </div>
 </template>
 
 <style scoped>

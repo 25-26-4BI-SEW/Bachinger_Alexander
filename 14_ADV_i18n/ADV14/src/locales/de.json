@@ -1,3 +1,5 @@
 {
-  "test": "DE"
+  "whatLang": "DE",
+  "car": "Auto | Autos",
+  "apple": "Keine Äpfel | Ein Apfel | {count} Äpfel"
 }
