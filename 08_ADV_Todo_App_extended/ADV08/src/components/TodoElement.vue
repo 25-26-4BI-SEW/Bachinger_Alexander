@@ -2,10 +2,10 @@
 import {computed} from "vue"
 
 const props = defineProps({
-    description: {
-        type: String,
-        required: true,
-    },
+    // description: {
+    //     type: String,
+    //     required: true,
+    // },
     timestamp: {
         type: Number,
         required: true,
@@ -21,14 +21,20 @@ const getAge = computed(() => {
     const minutes = Math.floor((diff / (1000 * 60)) % 60);
 
     return days + 'd ' + hours + 'h ' + minutes + 'm';
-})
+});
 </script>
 
 <template>
     <tr>
-        <td>{{ props.description }}</td>
+        <td>
+            <slot name="description"/>
+        </td>
         <td>{{ getAge }}</td>
-        <td class="clickable" @click="emit('remove')">🗑️</td>
+        <td class="clickable">
+            <slot name="actions">
+                🗑️
+            </slot>
+        </td>
     </tr>
 </template>
 

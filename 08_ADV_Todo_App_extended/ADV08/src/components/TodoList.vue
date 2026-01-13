@@ -25,10 +25,19 @@ const emit = defineEmits(["remove"])
             <TodoElement
                 v-for="todo in todos"
                 :key="todo.id"
-                :description="todo.description"
                 :timestamp="todo.timestamp"
                 @remove="emit('remove', todo.id)"
-            />
+            >
+                <template #description>
+                    {{ todo.description }}
+                </template>
+
+                <template #actions>
+                    <button @click.stop="emit('remove', todo.id)">
+                        Löschen
+                    </button>
+                </template>
+            </TodoElement>
         </TransitionGroup>
     </table>
     <div v-else class="noTodos">No Todos!</div>
@@ -39,6 +48,7 @@ const emit = defineEmits(["remove"])
 .fade-leave-active {
     transition: opacity 0.3s;
 }
+
 .fade-enter-from,
 .fade-leave-to {
     opacity: 0;
