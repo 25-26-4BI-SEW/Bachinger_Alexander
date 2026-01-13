@@ -1,7 +1,7 @@
 <script setup>
 import {ref, watch} from "vue";
 
-const emit = defineEmits([]);
+const emit = defineEmits(["add"]);
 const todoInput = ref("");
 const errorMessage = ref("");
 
@@ -15,13 +15,13 @@ watch(todoInput, () => {
     if (todoInput.value.length > 50) {
         errorMessage.value = "The character count exceeds 50 characters!";
     } else errorMessage.value = "";
-})
+});
 </script>
 
 <template>
-    <input v-model.trim="todoInput" placeholder="Enter Todo" type="text" autofocus>
-    <button type="button" @click="addTodo">Add</button>
-    <div v-if="errorMessage" class="error">{{ errorMessage }}</div>
+    <input v-model.trim="todoInput" autofocus placeholder="Enter Todo" type="text"/>
+    <button @click="addTodo">Add</button>
+    <p v-if="errorMessage" class="error">{{ errorMessage }}</p>
 </template>
 
 <style scoped>

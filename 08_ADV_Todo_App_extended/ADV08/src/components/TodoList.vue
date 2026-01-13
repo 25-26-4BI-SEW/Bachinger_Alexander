@@ -1,9 +1,14 @@
 <script setup>
-import TodoElement from './TodoElement.vue'
+import TodoElement from "./TodoElement.vue"
 
 defineProps({
-    todos: Array,
+    todos: {
+        type: Array,
+        required: true,
+    },
 })
+
+const emit = defineEmits(["remove"])
 </script>
 
 <template>
@@ -15,15 +20,27 @@ defineProps({
             <th>Completed</th>
         </tr>
         </thead>
-        <tbody>
-        <TodoElement
-            v-for="item in todos"
-            :completed="item.completed"
-            :description="item.description"
-            :timestamp="item.timestamp"
-            @update:completed="(v) => item.completed = v"
-        />
-        </tbody>
+
+        <TransitionGroup name="fade" tag="tbody">
+            <TodoElement
+                v-for="todo in todos"
+                :key="todo.id"
+                :description="todo.description"
+                :timestamp="todo.timestamp"
+                @remove="emit('remove', todo.id)"
+            />
+        </TransitionGroup>
     </table>
     <div v-else class="noTodos">No Todos!</div>
 </template>
+
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.3s;
+}
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+}
+</style>

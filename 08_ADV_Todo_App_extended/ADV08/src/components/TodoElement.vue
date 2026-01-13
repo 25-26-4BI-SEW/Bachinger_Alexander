@@ -1,42 +1,39 @@
+<script setup>
+import {computed} from "vue"
+
+const props = defineProps({
+    description: {
+        type: String,
+        required: true,
+    },
+    timestamp: {
+        type: Number,
+        required: true,
+    }
+});
+
+const emit = defineEmits(["remove"])
+
+const getAge = computed(() => {
+    const diff = new Date() - new Date(props.timestamp);
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+
+    return days + 'd ' + hours + 'h ' + minutes + 'm';
+})
+</script>
+
 <template>
     <tr>
-        <td>{{ description }}</td>
+        <td>{{ props.description }}</td>
         <td>{{ getAge }}</td>
-        <td class="complete" @click="toggleCompleted">{{ completed ? "✅" : "❌" }}</td>
+        <td class="clickable" @click="emit('remove')">🗑️</td>
     </tr>
 </template>
 
-<script>
-export default {
-    name: "TodoElement",
-
-    props: {
-        description: String,
-        timestamp: Number,
-        completed: Boolean,
-    },
-
-    emits: ["update:completed"],
-
-    computed: {
-        getAge() {
-            const diff = new Date() - new Date(this.timestamp);
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-            const minutes = Math.floor((diff / (1000 * 60)) % 60);
-            return days + 'd ' + hours + 'h ' + minutes + 'm';
-        },
-    },
-    methods: {
-        toggleCompleted() {
-            this.$emit("update:completed", !this.completed);
-        },
-    },
-};
-</script>
-
 <style scoped>
-td.complete {
+.clickable {
     cursor: pointer;
 }
 </style>
