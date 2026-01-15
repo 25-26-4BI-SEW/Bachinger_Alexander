@@ -27,10 +27,12 @@ const getAge = computed(() => {
 <template>
     <tr>
         <td>
-            <slot name="description"/>
+            <slot name="description">
+                No description was provided.
+            </slot>
         </td>
         <td>{{ getAge }}</td>
-        <td class="clickable">
+        <td class="clickable" @click.stop="emit('remove')">
             <slot name="actions">
                 🗑️
             </slot>

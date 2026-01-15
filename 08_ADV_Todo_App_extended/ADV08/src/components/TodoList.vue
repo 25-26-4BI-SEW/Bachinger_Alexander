@@ -34,7 +34,7 @@ const emit = defineEmits(["remove"])
 
                 <template #actions>
                     <button @click.stop="emit('remove', todo.id)">
-                        Löschen
+                        Delete
                     </button>
                 </template>
             </TodoElement>
