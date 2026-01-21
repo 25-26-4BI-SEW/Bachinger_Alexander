@@ -1,5 +1,5 @@
 <script setup>
-import {ref, watch} from "vue";
+import {onMounted, ref, useTemplateRef, watch} from "vue";
 
 const emit = defineEmits(["add"]);
 const todoInput = ref("");
@@ -16,10 +16,15 @@ watch(todoInput, () => {
         errorMessage.value = "The character count exceeds 50 characters!";
     } else errorMessage.value = "";
 });
+const input = useTemplateRef('input');
+onMounted(() => {
+    input.value.focus()
+});
+
 </script>
 
 <template>
-    <input v-model.trim="todoInput" autofocus placeholder="Enter Todo" type="text"/>
+    <input ref="input" v-model.trim="todoInput" placeholder="Enter Todo" type="text"/>
     <button @click="addTodo">Add</button>
     <p v-if="errorMessage" class="error">{{ errorMessage }}</p>
 </template>
