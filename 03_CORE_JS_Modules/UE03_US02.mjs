@@ -1,3 +1,4 @@
+// BAC
 import {rgbFunctionToHex, hexToRgb} from "./UE03_US01.mjs";
 
 function convert(input, asPercentage = false) {

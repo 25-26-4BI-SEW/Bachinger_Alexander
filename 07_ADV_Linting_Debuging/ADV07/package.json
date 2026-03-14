@@ -1,6 +1,7 @@
 {
   "name": "adv07",
   "private": true,
+  "author": "BAC",
   "version": "0.0.0",
   "type": "module",
   "scripts": {

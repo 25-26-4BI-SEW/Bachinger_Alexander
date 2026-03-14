@@ -1,3 +1,4 @@
+// BAC
 function rgbToHex(r, g, b) {
     if (![r, g, b].every(v => Number.isInteger(v) && v >= 0 && v <= 255)) return -1;
     const toHex = (n) => {
