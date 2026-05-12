@@ -1,32 +1,31 @@
 <script setup>
 import {onMounted, ref} from "vue";
 
-const emit = defineEmits(["input"]);
-const input = ref("");
+const emit = defineEmits(["search"]);
+const search = ref("");
 const inputEl = ref(null); // DOM element
 let debounceTimeout = null;
 
 function emitChange() {
     clearTimeout(debounceTimeout);
-    debounceTimeout = setTimeout(() => emit("input", input.value), 500);
+    debounceTimeout = setTimeout(() => emit("search", search.value), 500);
 }
 
 function clearInput() {
     clearTimeout(debounceTimeout);
-    input.value = "";
-    emit("input", "");
+    search.value = "";
+    emit("search", "");
 }
 
 onMounted(() => {
-    inputEl.value?.focus();
+    inputEl.value.focus();
 });
 
 </script>
 
 <template>
     <div class="input-wrapper">
-        {{ input.value }}
-        <input ref="inputEl" v-model.trim="input" name="recipe-keyword" placeholder="Search for recipes..." type="text"
+        <input ref="inputEl" v-model.trim="search" name="recipe-keyword" placeholder="Search for recipes..." type="text"
                @input="emitChange">
         <button type="button" @click="clearInput">Clear</button>
     </div>

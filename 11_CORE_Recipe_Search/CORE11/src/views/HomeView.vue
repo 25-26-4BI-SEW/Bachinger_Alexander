@@ -1,17 +1,25 @@
 <script setup>
-import {ref} from "vue";
-import RecipesSearch from "@/components/RecipesSearch.vue";
-import SearchInput from "@/components/SearchInput.vue";
+import axios from 'axios'
+import {ref} from 'vue'
+import SearchBar from '@/components/SearchBar.vue'
+import RecipeList from '@/components/RecipeList.vue'
 
-const searchTerm = ref("");
+const recipes = ref([])
+
+const loadRecipes = async (query) => {
+    if (!query) return
+    const apiKey = import.meta.env.VITE_API_KEY;
+    const response = await axios.get('https://api.spoonacular.com/recipes/complexSearch', {
+        params: {
+            apiKey,
+            query
+        }
+    })
+    recipes.value = response.data.results;
+}
 </script>
 
 <template>
-    <main>
-        <SearchInput @input="(v) => searchTerm = v"></SearchInput>
-        <br>
-        <hr>
-        <div v-if="searchTerm">Recipe for: {{ searchTerm }}</div>
-        <RecipesSearch :recipeKeyword="searchTerm"></RecipesSearch>
-    </main>
+    <SearchBar @search="loadRecipes"/>
+    <RecipeList :recipes="recipes"/>
 </template>

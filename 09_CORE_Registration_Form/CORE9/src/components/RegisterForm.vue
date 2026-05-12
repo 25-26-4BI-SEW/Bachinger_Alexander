@@ -25,7 +25,7 @@ const rules = {
     email: {
         required:
             helpers.withMessage('Email is required', required),
-        email
+        email // key = name of the var, value = var
     },
     birthday: {
         required:
