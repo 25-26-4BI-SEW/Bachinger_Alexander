@@ -8,7 +8,8 @@ let debounceTimeout = null;
 
 function emitChange() {
     clearTimeout(debounceTimeout);
-    debounceTimeout = setTimeout(() => emit("search", search.value), 500);
+    debounceTimeout = setTimeout(() => emit("search", search.value), 500
+    );
 }
 
 function clearInput() {

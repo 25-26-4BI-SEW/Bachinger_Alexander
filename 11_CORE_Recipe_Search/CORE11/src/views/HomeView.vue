@@ -4,7 +4,7 @@ import {ref} from 'vue'
 import SearchBar from '@/components/SearchBar.vue'
 import RecipeList from '@/components/RecipeList.vue'
 
-const recipes = ref([])
+const recipes = ref([]);
 
 const loadRecipes = async (query) => {
     if (!query) return
