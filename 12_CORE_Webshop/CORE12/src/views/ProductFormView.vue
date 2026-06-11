@@ -63,45 +63,71 @@ function saveProduct() {
 .form-wrapper {
     display: flex;
     justify-content: center;
+    align-items: flex-start;
+    padding: 2rem 1rem;
 }
 
 .form {
     width: 100%;
-    max-width: 500px;
-    background: white;
-    padding: 24px;
+    max-width: 480px;
+    background: #1c1c1c;
+    color: #dcdcdc;
+    padding: 2rem;
     border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 h2 {
-    margin-top: 0;
-    margin-bottom: 20px;
+    margin: 0 0 1.5rem;
+    font-size: 18px;
+    font-weight: 500;
 }
 
 input,
 textarea {
     width: 100%;
-    padding: 12px;
-    margin-bottom: 16px;
+    padding: 10px 12px;
+    margin-bottom: 1rem;
     border-radius: 8px;
-    border: 1px solid #ccc;
-    font-size: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    color: black;
+    font-size: 15px;
+    font-family: inherit;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    outline: none;
+    box-sizing: border-box;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #534AB7;
+    box-shadow: 0 0 0 3px rgba(83, 74, 183, 0.12);
+}
+
+textarea {
+    resize: vertical;
+    line-height: 1.6;
 }
 
 button {
     width: 100%;
-    padding: 12px;
+    padding: 11px;
     border: none;
-    background: #42b883;
-    color: white;
-    font-size: 16px;
+    background: #534AB7;
+    color: #fff;
+    font-size: 15px;
+    font-family: inherit;
+    font-weight: 500;
     border-radius: 8px;
     cursor: pointer;
-    font-weight: bold;
+    transition: background 0.15s, transform 0.1s;
 }
 
 button:hover {
-    background: #369f6f;
+    background: #3C3489;
+}
+
+button:active {
+    transform: scale(0.98);
 }
 </style>

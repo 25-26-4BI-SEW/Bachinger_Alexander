@@ -40,10 +40,10 @@ function removeProduct() {
 
 <style scoped>
 .card {
-    background: white;
+    background: black;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgb(232 232 232 / 0.1);
 }
 
 img {
@@ -61,13 +61,13 @@ h2 {
 }
 
 .price {
-    color: #42b883;
+    color: #84dfb6;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
 .description {
-    color: #555;
+    color: white;
     margin-bottom: 20px;
 }
 
