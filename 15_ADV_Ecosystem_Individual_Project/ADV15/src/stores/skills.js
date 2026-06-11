@@ -7,80 +7,48 @@ export const useSkillStore = defineStore('skills', {
                 "title": "skills.frontend",
                 "color": 1,
                 "skills": [
-                    {
-                        "file": "html.svg",
-                        "name": "HTML",
-                        "link_src": "https://wikipedia.org/wiki/Hypertext_Markup_Language"
-                    },
-                    {
-                        "file": "css.svg",
-                        "name": "CSS",
-                        "link_src": "https://wikipedia.org/wiki/Cascading_Style_Sheets"
-                    },
-                    {
-                        "file": "javascript.svg",
-                        "name": "JavaScript",
-                        "link_src": "https://wikipedia.org/wiki/JavaScript"
-                    },
-                    {
-                        "file": "bootstrap.svg",
-                        "name": "Bootstrap",
-                        "link_src": "https://getbootstrap.com"
-                    },
-                    {"file": "vue.svg", "name": "Vue.js", "link_src": "https://vuejs.org"}
+                    {"file": "html.svg", "name": "HTML",},
+                    {"file": "css.svg", "name": "CSS",},
+                    {"file": "javascript.svg", "name": "JavaScript",},
+                    {"file": "bootstrap.svg", "name": "Bootstrap",},
+                    {"file": "vue.svg", "name": "Vue.js"}
                 ]
             },
             {
                 "title": "skills.backend",
                 "color": 2,
                 "skills": [
-                    {"file": "node.svg", "name": "Node.js", "link_src": "https://nodejs.org"},
-                    {"file": "php.svg", "name": "PHP", "link_src": "https://www.php.net"},
-                    {"file": "java.svg", "name": "Java", "link_src": "https://www.java.com"},
-                    {"file": "python.svg", "name": "Python", "link_src": "https://www.python.org"},
-                    {"file": "mysql.svg", "name": "MySQL", "link_src": "https://www.mysql.com"}
+                    {"file": "node.svg", "name": "Node.js"},
+                    {"file": "php.svg", "name": "PHP"},
+                    {"file": "java.svg", "name": "Java"},
+                    {"file": "python.svg", "name": "Python"},
+                    {"file": "mysql.svg", "name": "MySQL"}
                 ]
             },
             {
                 "title": "skills.dev",
                 "color": 3,
                 "skills": [
-                    {
-                        "file": "linux.svg",
-                        "name": "Linux",
-                        "link_src": "https://wikipedia.org/wiki/Linux"
-                    },
-                    {
-                        "file": "bash.svg",
-                        "name": "Bash",
-                        "link_src": "https://wikipedia.org/wiki/Bash_(Shell)"
-                    },
-                    {"file": "docker.svg", "name": "Docker", "link_src": "https://www.docker.com"}
+                    {"file": "linux.svg", "name": "Linux"},
+                    {"file": "bash.svg", "name": "Bash",},
+                    {"file": "docker.svg", "name": "Docker"}
                 ]
             },
             {
                 "title": "skills.tools",
                 "color": 4,
                 "skills": [
-                    {
-                        "file": "office.svg",
-                        "name": "MS Office",
-                        "link_src": "https://www.office.com"
-                    },
-                    {"file": "git.svg", "name": "Git", "link_src": "https://git-scm.com"}
+                    {"file": "office.svg", "name": "MS Office",},
+                    {"file": "git.svg", "name": "Git"}
                 ]
             },
             {
                 "title": "skills.cms",
                 "color": 5,
                 "skills": [
-                    {
-                        "file": "wordpress.svg",
-                        "name": "WordPress",
-                        "link_src": "https://wordpress.com"
-                    },
-                    {"file": "typo3.svg", "name": "TYPO3", "link_src": "https://typo3.org"},
-                    {"file": "adobe.svg", "name": "Adobe CC", "link_src": "https://www.adobe.com"}
+                    {"file": "wordpress.svg", "name": "WordPress"},
+                    {"file": "typo3.svg", "name": "TYPO3"},
+                    {"file": "adobe.svg", "name": "Adobe CC"}
                 ]
             }
         ]

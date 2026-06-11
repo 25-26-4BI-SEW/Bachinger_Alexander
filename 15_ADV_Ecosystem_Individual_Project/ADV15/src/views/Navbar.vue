@@ -64,7 +64,7 @@ onUnmounted(() => window.removeEventListener("scroll", handleScroll));
                 <li v-for="link in links" :key="link.id">
                     <a
                         :class="{ active: activeSection === link.id }"
-                        :href="'/home#' + link.id"
+                        :href="'/' + link.id"
                         class="nav-item"
                         @click="scrollToSection(link.id)"
                     >
