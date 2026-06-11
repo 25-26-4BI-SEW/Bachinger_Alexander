@@ -1,0 +1,76 @@
+{
+    "contactEmail": "contact{'@'}alexanderbachinger.com",
+    "nav": {
+        "home": "Start",
+        "skills": "Skills"
+    },
+    "hero": {
+        "profession": "Software/Web Entwickler",
+        "contact_me": "Kontaktiere Mich",
+        "cv": "Lebenslauf"
+    },
+    "about": {
+        "title": "Über mich",
+        "text": "Ich bin ein motivierter Webentwickler mit fundierten Kenntnissen in modernen Webtechnologien und Softwareentwicklung. Ich arbeite routiniert mit HTML, CSS, JavaScript und Frameworks wie Bootstrap und verfüge über zusätzliche Programmiererfahrung in Python, Java und SQL. Darüber hinaus habe ich durch Projekte Websites entwickelt und optimiert, darunter Anwendungen für private und berufliche Zwecke."
+    },
+    "skills": {
+        "frontend": "Frontend-Entwicklung",
+        "backend": "Backend-Entwicklung",
+        "dev": "DevOps & Systemkenntnisse",
+        "tools": "Tools & Versionskontrolle",
+        "cms": "CMS & Design"
+    },
+    "scroll": "Zurück zum Anfang",
+    "legal": {
+        "imprint": {
+            "header": "Impressum",
+            "title": "Offenlegung gem. §25 MedienG",
+            "mediaOwnerLabel": "Medieninhaber:",
+            "residenceLabel": "Wohnort:",
+            "residenceValue": "Gerasdorf bei Wien, Österreich",
+            "contactLabel": "Kontakt:",
+            "websiteTypeLabel": "Art der Website:",
+            "websiteTypeValue": "Private Portfolio-Website ohne journalistisch-redaktionelle Inhalte.\nKeine unternehmerische oder gewerbliche Tätigkeit."
+        },
+        "privacy": {
+            "footer_link": "Datenschutzerklärung",
+            "header": "Datenschutzerklärung (DSGVO)",
+            "controller": {
+                "title": "1. Verantwortlicher",
+                "text": "Verantwortlicher iSd DSGVO:",
+                "address": "Wohnort: Gerasdorf bei Wien, Österreich"
+            },
+            "contacting": {
+                "title": "2. Kontaktaufnahme",
+                "text": "Wenn Sie über das Kontaktformular oder per E-Mail Kontakt aufnehmen, werden die von Ihnen angegebenen personenbezogenen Daten (z. B. Name, E-Mail-Adresse, Nachricht) zum Zweck der Bearbeitung und Beantwortung Ihrer Anfrage verarbeitet.",
+                "legalBasis_title": "Rechtsgrundlage:",
+                "legalBasis": "Art. 6 Abs. 1 lit. b DSGVO (Bearbeitung von Anfragen) und/oder\nArt. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Kommunikation).",
+                "retention": "Die Daten werden nur so lange gespeichert, wie es für die Bearbeitung der Anfrage erforderlich ist."
+            },
+            "third": {
+                "title": "3. Weitergabe an Dritte (Discord)",
+                "text": "Zur Übermittlung von Kontaktanfragen wird ein Discord-Webhook verwendet.\nDabei werden die im Kontaktformular angegebenen Daten (z. B. Name, Nachricht, E-Mail-Adresse) an Discord (Discord Inc.) übermittelt und dort verarbeitet.",
+                "legalBasis": "Art. 6 Abs. 1 lit. b DSGVO sowie Art. 6 Abs. 1 lit. f DSGVO.",
+                "retention": "Weitere Informationen zur Datenverarbeitung durch Discord sind in der Datenschutzerklärung von Discord zu finden."
+            },
+            "logs": {
+                "title": "4. Server-Logfiles",
+                "text": "Beim Besuch dieser Website werden durch den Webserver automatisch Informationen in sogenannten Server-Logfiles erhoben.\nDiese können insbesondere folgende Daten enthalten: IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Seiten oder Dateien, Referrer-URL, Browsertyp und Betriebssystem.",
+                "legalBasis": "Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einem sicheren und stabilen Betrieb der Website).",
+                "retention": "Server-Logfiles werden nur für einen begrenzten Zeitraum gespeichert und anschließend gelöscht."
+            },
+            "cookies": {
+                "title": "5. Cookies und Tracking",
+                "text": "Diese Website verwendet keine Cookies zu Analyse- oder Tracking-Zwecken und keine externen Analyse-Tools."
+            },
+            "rights": {
+                "title": "6. Rechte der betroffenen Personen",
+                "text": "Sie haben das Recht auf Auskunft über die Sie betreffenden personenbezogenen Daten, auf Berichtigung oder Löschung, auf Einschränkung der Verarbeitung, auf Datenübertragbarkeit sowie auf Widerspruch gegen die Verarbeitung.\n\nZudem haben Sie das Recht, dich bei der österreichischen Datenschutzbehörde zu beschweren."
+            },
+            "requests": {
+                "title": "7. Kontakt für Datenschutzanfragen",
+                "text": "Für Anfragen zum Datenschutz können Sie sich jederzeit per E-Mail an mich wenden:"
+            }
+        }
+    }
+}

@@ -1,0 +1,248 @@
+.hero {
+    padding-top: 150px;
+    height: 650px;
+    display: flex;
+    flex-direction: row;
+    min-height: 450px;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero_info {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+
+    > div {
+        margin: auto 0 auto auto;
+    }
+}
+
+.hero_socials {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 30px;
+    text-align: center;
+
+    .socials_buttons, .socials_icons {
+        display: flex;
+        gap: 10px;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 100ms;
+
+        img {
+            width: 40px;
+        }
+    }
+
+    .icon:hover {
+        opacity: 0.8;
+    }
+}
+
+/*Button Box Animation*/
+
+.box_animation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 0;
+    width: 150px;
+    height: 40px;
+    border: 1px solid var(--text);
+    cursor: pointer;
+    transition: 700ms;
+}
+
+html[lang="de"] .box_animation {
+    width: 170px;
+}
+
+.box_animation::before, .box_animation::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    background: var(--background);
+    transition: 700ms;
+}
+
+.box_animation::before, .box_animation::after {
+    height: 50px;
+    width: 130px;
+}
+
+.box_animation:hover::before {
+    width: 0;
+}
+
+.box_animation:hover::after {
+    height: 0;
+}
+
+/*Main Picture*/
+
+.hero_image {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+.portrait_container {
+    width: 380px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.portrait_cover_top {
+    position: absolute;
+    width: 100%;
+    height: 190px;
+    background-color: var(--lighter_background);
+    z-index: 0;
+    top: 120px;
+    border-radius: 190px 190px 0 0;
+    /*mask-image: linear-gradient(to top, var(--lighter_background) 30%, transparent 80%);*/
+}
+
+.portrait_wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 0 190px 190px;
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(to top, var(--lighter_background) 190px, transparent 190px);
+    overflow: hidden;
+
+    img {
+        transform: translateY(50px);
+        height: 500px;
+    }
+}
+
+.hero_profession {
+    font-size: var(--size_section-titles);
+    font-family: var(--font_family_mono), serif;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero_name {
+    font-size: var(--size_headline);
+    color: var(--accent);
+    font-family: var(--font_family_mono), serif;
+    font-weight: bold;
+    margin-bottom: 10px;
+
+    span {
+        display: inline-block;
+    }
+}
+
+.hero_name span::after {
+    content: "|";
+    display: inline-block;
+    font-size: calc(var(--size_headline) * 1.2);
+    animation: blink-animation 1.5s steps(2) infinite;
+    width: 20px;
+}
+
+.hero_name:hover span::after {
+    animation: none;
+    visibility: visible;
+}
+
+@keyframes blink-animation {
+    from {
+        visibility: hidden;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .hero {
+        margin: 0 2rem;
+    }
+}
+
+@media screen and (max-width: 910px) {
+    .hero {
+        flex-direction: column;
+        height: 840px;
+
+        .hero_info {
+            text-align: center;
+            line-height: normal;
+            width: 100%;
+
+            > div {
+                margin: 0;
+            }
+        }
+
+        .hero_image {
+            min-height: 500px;
+            width: 100%;
+        }
+
+        .hero_socials {
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+
+            .socials_buttons {
+                margin-top: 10px;
+                gap: 15px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 631px) {
+    .hero {
+        height: 907px;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .hero_socials {
+        flex-direction: column;
+
+        .socials_icons {
+            flex-direction: row;
+        }
+
+        .socials_buttons {
+            flex-direction: column;
+        }
+    }
+
+    .hero {
+        height: 1013px;
+    }
+}
+
+@media screen and (max-width: 345px) {
+    .hero_name > span::after {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 321px) {
+    .hero{
+        margin: 0 0.5rem;
+    }
+}

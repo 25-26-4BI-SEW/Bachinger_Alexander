@@ -1,0 +1,74 @@
+:root {
+    --size_min: 14px;
+    --size_text: 18px;
+    --size_subheadline: 24px;
+    --size_section-titles: 32px;
+    --size_headline: 48px;
+    --font_family_mono: "Courier New", Courier, monospace;
+    --light_gray: #aeb5bd;
+}
+
+:root[data-theme="dark"] {
+    --light: #ffffff;
+    --text: #f0f6ff;
+    --darker_text: #afafaf;
+    --background: #1c1e1f;
+    --lighter_background: #28292a;
+    --darker_background: #121515;
+    --primary: #81b5fd;
+    --secondary: #9b0336;
+    --accent: #fa5a0f;
+}
+
+:root[data-theme="light"] {
+    --light: #000000;
+    --text: #01142d;
+    --darker_text: #2f517e;
+    --background: #e7f0fe;
+    --lighter_background: #ffffff;
+    --darker_background: #aeb5bd;
+    --primary: #02357e;
+    --secondary: #fc6497;
+    --accent: #f04f05;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+li, p, h2, h3, a, footer {
+    word-spacing: 0.2em;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    font-family: "Sans Serif Collection", serif;
+    line-height: 1.5;
+    font-size: var(--size_text);
+}
+
+section, .navbar {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text);
+}
+
+.subheading {
+    text-align: center;
+    margin: 0 auto 30px;
+    font-family: var(--font_family_mono), serif;
+    text-decoration: underline;
+}
+
+.hidden {
+    display: none;
+}
+

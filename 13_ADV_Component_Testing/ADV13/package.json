@@ -2,6 +2,7 @@
   "name": "adv13",
   "version": "0.0.0",
   "private": true,
+  "author": "BAC",
   "type": "module",
   "scripts": {
     "dev": "vite",

@@ -1,0 +1,76 @@
+{
+    "contactEmail": "contact{'@'}alexanderbachinger.com",
+    "nav": {
+        "home": "Home",
+        "skills": "Skills"
+    },
+    "hero": {
+        "profession": "Software/Web Developer",
+        "contact_me": "Contact Me",
+        "cv": "Download CV"
+    },
+    "about": {
+        "title": "About Me",
+        "text": "I'm a motivated web developer with solid knowledge of modern web technologies and software development. I'm proficient in HTML, CSS, JavaScript, and frameworks like Bootstrap, and I have additional programming experience in Python, Java, and SQL. I've also developed and optimized websites through projects, including applications for personal and professional purposes."
+    },
+    "skills": {
+        "frontend": "Frontend-Development",
+        "backend": "Backend-Development",
+        "dev": "DevOps & System Knowledge",
+        "tools": "Tools & Version Control",
+        "cms": "CMS & Design"
+    },
+    "scroll": "Back to Top",
+    "legal": {
+        "imprint": {
+            "header": "Imprint",
+            "title": "Disclosure pursuant to §25 Austrian Media Act",
+            "mediaOwnerLabel": "Media owner:",
+            "residenceLabel": "Place of residence:",
+            "residenceValue": "Gerasdorf near Vienna, Austria",
+            "contactLabel": "Contact:",
+            "websiteTypeLabel": "Type of website:",
+            "websiteTypeValue": "Private portfolio website without journalistic or editorial content.\nNo business or commercial activity."
+        },
+        "privacy": {
+            "footer_link": "Privacy",
+            "header": "Privacy Policy (GDPR)",
+            "controller": {
+                "title": "1. Controller",
+                "text": "Controller within the meaning of the GDPR:",
+                "address": "Place of residence: Gerasdorf near Vienna, Austria"
+            },
+            "contacting": {
+                "title": "2. Contacting me",
+                "text": "If you contact me via the contact form or by email, the personal data you provide (e.g. name, email address, message) will be processed for the purpose of handling and responding to your inquiry.",
+                "legalBasis_title": "Legal basis:",
+                "legalBasis": "Art. 6(1)(b) GDPR (handling inquiries) and/or\nArt. 6(1)(f) GDPR (legitimate interest in communication).",
+                "retention": "The data will only be stored for as long as necessary to process the inquiry."
+            },
+            "third": {
+                "title": "3. Data sharing with third parties (Discord)",
+                "text": "To transmit contact inquiries, a Discord webhook is used.\nThe data provided via the contact form (e.g. name, message, email address) is transmitted to and processed by Discord (Discord Inc.).",
+                "legalBasis": "Art. 6(1)(b) GDPR and Art. 6(1)(f) GDPR.",
+                "retention": "Further information about data processing by Discord can be found in Discord’s privacy policy."
+            },
+            "logs": {
+                "title": "4. Server log files",
+                "text": "When visiting this website, the web server automatically collects information in so-called server log files.\nThis may include the IP address, date and time of access, requested pages or files, referrer URL, browser type, and operating system.",
+                "legalBasis": "Art. 6(1)(f) GDPR (legitimate interest in secure and stable operation of the website).",
+                "retention": "Server log files are stored only for a limited period and are then deleted."
+            },
+            "cookies": {
+                "title": "5. Cookies and tracking",
+                "text": "This website does not use cookies for analytics or tracking purposes and does not use external analytics tools."
+            },
+            "rights": {
+                "title": "6. Rights of data subjects",
+                "text": "You have the right to access your personal data, to rectification or erasure, to restriction of processing, to data portability, and to object to processing.\n\nYou also have the right to lodge a complaint with the Austrian Data Protection Authority."
+            },
+            "requests": {
+                "title": "7. Contact for privacy requests",
+                "text": "If you have any questions regarding data protection, you can contact me at any time by email:"
+            }
+        }
+    }
+}

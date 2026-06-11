@@ -1,0 +1,23 @@
+.about_me {
+    max-width: 50%;
+    margin: 100px auto 0;
+}
+
+.about_me_container {
+    padding: 30px;
+    border-radius: 30px;
+    font-size: var(--size_text);
+    text-align: justify;
+}
+
+@media screen and (max-width: 910px) {
+    .about_me {
+        max-width: 90%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .about_me {
+        margin-top: 150px;
+    }
+}
